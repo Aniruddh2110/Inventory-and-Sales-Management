@@ -1,0 +1,142 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: white;
+  border-radius: 5px;
+  padding: 40px;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+  text-align: center;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  background: linear-gradient(135deg, #0d52f3 0%, #0d52f3 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.modal-icon svg {
+  width: 45px;
+  height: 45px;
+}
+
+.modal-content h2 {
+  font-size: 28px;
+  margin: 0 0 12px 0;
+  color: #1f2937;
+}
+
+.modal-content p {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0 0 32px 0;
+  line-height: 1.6;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.btn-login,
+.btn-register {
+  flex: 1;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-login svg,
+.btn-register svg {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-login {
+  background: linear-gradient(135deg, #0d52f3 0%, #0d52f3 100%);
+  color: white;
+}
+
+.btn-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(6, 47, 231, 0.4);
+}
+
+.btn-register {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+}
+
+.btn-register:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(3, 113, 77, 0.4);
+}
+
+.btn-cancel {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 2px solid #e5e7eb;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-cancel:hover {
+  background: #000000;
+  border-color: #d1d5db;
+  color: #ffffff;
+}

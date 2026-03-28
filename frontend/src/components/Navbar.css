@@ -1,0 +1,247 @@
+.navbar {
+  background: linear-gradient(135deg, #0d52f3 0%, #0d52f3 100%);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  height: 70px;
+}
+
+/* Brand */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  color: #ffffff;
+}
+
+.brand-text {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-toggle svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  color: #e5e7eb;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Cart Link with Badge */
+.cart-link {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 5px;
+  min-width: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+}
+
+/* Button Variants */
+.nav-btn {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-btn-primary {
+  background: linear-gradient(135deg, #0d52f3 0%, #0d52f3 100%);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.nav-btn-primary:hover {
+  background: linear-gradient(135deg, #0d52f3 0%, #0d52f3 100%);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  transform: translateY(-2px);
+}
+
+.logout-link {
+  background: rgba(255, 0, 0, 0.1);
+  color: #ffffff;
+}
+
+.logout-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ff0000;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 280px;
+    height: calc(100vh - 70px);
+    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 20px;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease;
+    overflow-y: auto;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-link {
+    justify-content: flex-start;
+    width: 100%;
+    padding: 14px 16px;
+  }
+
+  .nav-link:hover {
+    transform: translateX(4px);
+  }
+
+  .cart-badge {
+    right: auto;
+    left: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 16px;
+    height: 60px;
+  }
+
+  .brand-text {
+    font-size: 20px;
+  }
+
+  .brand-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav-menu {
+    top: 60px;
+    height: calc(100vh - 60px);
+    width: 100%;
+  }
+}
+
+/* Smooth Scroll */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Mobile Menu Overlay */
+@media (max-width: 968px) {
+  .nav-menu::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-menu.active::before {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+

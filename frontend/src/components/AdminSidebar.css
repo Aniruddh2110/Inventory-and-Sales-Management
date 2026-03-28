@@ -1,0 +1,85 @@
+.admin-sidebar {
+  width: 260px;
+  height: 100vh;
+  background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+/* Brand */
+.sidebar-brand {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  cursor: pointer;
+  margin-left: 13px;
+}
+
+/* Menu */
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Menu buttons */
+.sidebar-menu button {
+  background: none;
+  border: none;
+  color: #e5e7eb;
+  font-size: 15px;
+  padding: 12px 14px;
+  border-radius: 5px;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s ease;
+
+  /* NEW */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Icons */
+.sidebar-menu button svg {
+  font-size: 18px;
+}
+
+/* Hover */
+.sidebar-menu button:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+/* Active menu item */
+.sidebar-menu button.active {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+/* Logout button */
+.sidebar-logout {
+  margin-top: auto;
+  background: #dc2626;
+  border: none;
+  padding: 12px;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+
+  /* NEW */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sidebar-logout:hover {
+  background: #b91c1c;
+}
